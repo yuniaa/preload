@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection"content="telephone=no, email=no" />
+<link href="http://cdn.bootcss.com/normalize/3.0.3/normalize.min.css" rel="stylesheet">
+<link rel="stylesheet" href="loading.css">
+</head>
+<body>
+
+<!-- loading begin -->
+<div id="loading">
+	<div class="timer"></div>
+</div>
+<!-- loading end -->
+
+<!-- main begin -->
+<div class="page" id="page">
+	<img src="http://lorempixel.com/1400/500/sports/1" alt="">
+	<img src="http://lorempixel.com/1400/500/sports/2" alt="">
+	<img src="http://lorempixel.com/1400/500/sports/3" alt="">
+	<img src="http://lorempixel.com/1400/500/sports/4" alt="">
+	<img src="http://lorempixel.com/1400/500/sports/5" alt="">
+	<img src="http://lorempixel.com/1400/500/sports/6" alt="">
+	<img src="http://lorempixel.com/1400/500/sports/7" alt="">
+</div>
+<!-- main end -->
+
+<!-- preload script begin -->
+<script src="preload.js"></script>
+<script>
+var oLoad = document.querySelector('#loading');
+var oPage = document.querySelector('#page');
+
+new Preload({
+	time: 8000,
+	img: [
+ 		"http://lorempixel.com/1400/500/sports/1",
+ 		"http://lorempixel.com/1400/500/sports/2",
+ 		"http://lorempixel.com/1400/500/sports/3"
+ 	],
+	callback: function() {
+		oLoad.style.display = 'none';
+		oPage.style.display = 'block';
+	}
+})
+</script>
+<!-- preload script end -->
+</body>
+</html>
